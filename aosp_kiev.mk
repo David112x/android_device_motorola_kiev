@@ -22,10 +22,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/motorola/kiev/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_kiev
+PRODUCT_NAME := aosp_kiev
 PRODUCT_DEVICE := kiev
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := moto g 5G
@@ -45,3 +45,14 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="kiev_retail-user 11 RZKS31.Q3-45-16-8-3 018f4 release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
+
+# ROM specific flags
+TARGET_INCLUDE_WIFI_EXT := true
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_QUICK_TAP  := true
+
+# VoidUI Maintainer Flags
+VOID_MAINTAINER := David112x
+CUSTOM_BUILD_TYPE := COMMUNITY
